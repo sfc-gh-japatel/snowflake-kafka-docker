@@ -42,7 +42,7 @@ Open a terminal to execute the following command:
 docker exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic source-1 --from-beginning
 ```
 
-### 5 Check Data in Snowflake Account 
+### 5 - Check Data in Snowflake Account 
 
 Login to your account using username provided in config and verify data in the table. 
 
