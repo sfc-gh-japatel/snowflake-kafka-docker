@@ -1,11 +1,19 @@
-# Kafka Connect Snowflake Sink Connector
+# Snowflake Sink Connector Docker 
 
-This repository contains a sample docker compose file that can be used to start off testing Snowflake's Kafka connector.
+This repository contains a sample docker compose file that can be used to start off testing [Snowflake's Kafka connector](https://docs.snowflake.com/en/user-guide/kafka-connector.html).
+
+It has following services:
+
+- Zookeeper
+- Kafka Broker
+- Schema Registry
+- Kafka Connect 
+- Confluent Control Center
 
 
 ## Install Docker and Docker Compose 
 
-https://docs.docker.com/compose/install/
+[Install Link](https://docs.docker.com/compose/install/)
 
 
 ### 1 - Starting the environment
