@@ -1,6 +1,6 @@
 # Snowflake Sink Connector Docker 
 
-This repository contains a sample docker compose file that can be used to start off testing [Snowflake's Kafka connector](https://docs.snowflake.com/en/user-guide/kafka-connector.html).
+This repository contains a sample docker compose file that can be used for testing [Snowflake's Kafka connector](https://docs.snowflake.com/en/user-guide/kafka-connector.html).
 
 It has following services:
 
