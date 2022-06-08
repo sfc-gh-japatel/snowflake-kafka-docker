@@ -26,7 +26,29 @@ docker compose -f kafka-connect.yml up --remove-orphans
 
 Wait until all containers are up so you can start the testing.
 
-### 2 - Install the connector
+### 2 - Check if Control Center, Kafka, Kafka Connect is Running
+
+You can reach confluent control-center UI with this URL
+```bash
+localhost:9021
+
+```
+
+You should see a connect cluster and depending on which connector you installed, (Snowflake Connector in this case), you should see an option to add Snowflake Sink Connector. 
+
+You can also add a json file from UI. 
+
+### 3 - Port exposed from Docker
+
+Please note all docker images have its own hostname mentioned in ``kafka-connect.yml`` file
+
+Kafka: 9092
+Kafka Connect: 8083
+Schema Registry: 8081
+Java DEBUG Port for Connector: 5060
+JMX Port for Monitoring: 9876
+
+### 4 - Install the connector (From Command Line)
 
 Open a terminal to execute the following command:
 
@@ -34,15 +56,24 @@ Open a terminal to execute the following command:
 curl -X POST -H "Content-Type:application/json" -d @examples/sf-connector-example.json http://localhost:8083/connectors
 ```
 
-### 4 - Check the data in Kafka
+### 5 - Check the data in Kafka
 
 Open a terminal to execute the following command:
+This will start the consumer on the topic
 
 ```bash
 docker exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic source-1 --from-beginning
 ```
 
-### 5 - Check Data in Snowflake Account 
+### 6.a - Generate Data: Datagen Source Connector
+
+Use the source connector from confluent https://www.confluent.io/hub/confluentinc/kafka-connect-datagen 
+
+### 6.b - Alternative: Use Jmeter's pepper box to generate load.
+
+https://github.com/GSLabDev/pepper-box
+
+### 7 - Check Data in Snowflake Account 
 
 Login to your account using username provided in config and verify data in the table. 
 
