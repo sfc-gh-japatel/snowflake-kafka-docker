@@ -9,6 +9,7 @@ It has following services:
 - Schema Registry
 - Kafka Connect 
 - Confluent Control Center
+- Creating a topic ``TEST_TOPIC`` with 4 partitions
 
 
 ## Install Docker and Docker Compose 
@@ -43,9 +44,13 @@ You can also add a json file from UI.
 Please note all docker images have its own hostname mentioned in ``kafka-connect.yml`` file
 
 Kafka: 9092
+
 Kafka Connect: 8083
+
 Schema Registry: 8081
+
 Java DEBUG Port for Connector: 5060
+
 JMX Port for Monitoring: 9876
 
 ### 4 - Install the connector (From Command Line)
@@ -69,9 +74,13 @@ docker exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic s
 
 Use the source connector from confluent https://www.confluent.io/hub/confluentinc/kafka-connect-datagen 
 
-### 6.b - Alternative: Use Jmeter's pepper box to generate load.
+Check example: ``datagen_connector.json``
 
-https://github.com/GSLabDev/pepper-box
+### 6.b - Alternative: Use JMeter's pepper box to generate load. (In case of heavy load)
+
+1. Install JMeter https://jmeter.apache.org/
+2. Install the plugin https://github.com/GSLabDev/pepper-box
+3. Send JSON records to topic Created. 
 
 ### 7 - Check Data in Snowflake Account 
 

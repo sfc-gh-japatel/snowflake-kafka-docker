@@ -177,7 +177,7 @@ services:
       - -c
       - |
         sleep 5s 
-        kafka-topics --create --topic=MAY_19_DEMO --if-not-exists --bootstrap-server=kafka:29092 --partitions 4
+        kafka-topics --create --topic=TEST_TOPIC --if-not-exists --bootstrap-server=kafka:29092 --partitions 4
 
   # not needed
   # prometheus:
