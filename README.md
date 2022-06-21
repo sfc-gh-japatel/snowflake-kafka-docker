@@ -86,6 +86,16 @@ Check example: ``datagen_connector.json``
 
 Login to your account using username provided in config and verify data in the table. 
 
+### 8 - Stop all Services
+
+```docker compose -f kafka-connect.yml stop```
+
+### 9 - Stop Services and remove all containers Services
+
+Please note, this will also remove all containers, doing `docker compose up -d` will pull all containers again.
+
+```docker compose -f kafka-connect.yml down```
+
 # License
 
 This project is licensed under the [Apache 2.0 License](./LICENSE).
